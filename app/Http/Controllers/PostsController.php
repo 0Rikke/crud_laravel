@@ -28,7 +28,8 @@ class PostsController extends Controller
 
         unset($data['_token']);
 
-        DB::table('posts')->insert($data);
+        Posts::create($data);
+
 
         return redirect("index");
 
@@ -45,7 +46,7 @@ class PostsController extends Controller
 
         unset($data['_token']);
 
-        DB::update("UPDATE posts SET name = :name, mensagem = :mensagem WHERE id = :id ", $data);
+        Posts::whereId($request->id)->update($data);
 
         return redirect('index');
 

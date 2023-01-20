@@ -12,9 +12,9 @@
         <input type='hidden' name='_token' value='{{ csrf_token() }}'/>
         <input type="hidden" value="{{ $post[0]->id }}" name="id"/>
         <label for="nome">Nome</label>
-        <input name="name" type="text">
+        <input name="name" type="text" value="{{$post[0]->name}}">
         <label for="mensagem">Mensagem:</label>
-        <input name="mensagem" type="text">
+        <input name="mensagem" type="text" value="{{$post[0]->mensagem}}">
 
         <button type="submit">ENVIAR</button>
     </form>

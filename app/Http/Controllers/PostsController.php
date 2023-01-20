@@ -49,7 +49,7 @@ class PostsController extends Controller
         Posts::whereId($request->id)->update($data);
 
         return redirect('index');
-
+        //
     }
     //delete
     public function deletar($id){
